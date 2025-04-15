@@ -7,7 +7,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main className="max-w-3xl mx-auto px-8 ">
+      <main className="max-w-3xl mx-auto px-8 overflow-hidden">
         <TransformationSection />
 
         <h2 className="text-3xl font-bold mb-8 pt-16">Willkommen bei Personal Training</h2>

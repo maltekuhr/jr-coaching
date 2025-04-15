@@ -5,7 +5,6 @@ import { Navigation } from "@/components/Navigation"
 export function Header() {
   return (
     <div className="bg-background text-foreground">
-      <Navigation />
       <div className="relative">
         {/* Full-width background container */}
         <div className="absolute inset-0 flex justify-center">

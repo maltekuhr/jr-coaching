@@ -12,16 +12,18 @@ import 'swiper/css/effect-cards'
 interface TransformationData {
   beforeImage: string
   afterImage: string
-  story: string
+  name: string
+  age: number
+  quote: string
 }
 
-const TransformationCard = ({ beforeImage, afterImage, story }: TransformationData) => {
+const TransformationCard = ({ beforeImage, afterImage, name, age, quote }: TransformationData) => {
   return (
     <div className="bg-card rounded-xl overflow-hidden shadow-lg shadow-foreground/20 border-2 border-foreground">
       <Tabs defaultValue="before" className="w-full">
         <div className="relative">
           <TabsContent value="before" className="m-0">
-            <div className="relative w-full h-full max-h-[60vh] aspect-[1/2] overflow-hidden">
+            <div className="relative w-full h-full max-h-[70vh] aspect-[1/2] overflow-hidden">
               <Image 
                 src={beforeImage}
                 alt={`Vor der Transformation`}
@@ -33,7 +35,7 @@ const TransformationCard = ({ beforeImage, afterImage, story }: TransformationDa
             </div>
           </TabsContent>
           <TabsContent value="after" className="m-0">
-            <div className="relative w-full h-full max-h-[60vh] aspect-[1/2] overflow-hidden">
+            <div className="relative w-full h-full max-h-[70vh] aspect-[1/2] overflow-hidden">
               <Image 
                 src={afterImage}
                 alt={`Nach der Transformation`}
@@ -48,12 +50,15 @@ const TransformationCard = ({ beforeImage, afterImage, story }: TransformationDa
           {/* Text overlay with gradient at the bottom */}
           <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/60 to-transparent">
             <div className='flex justify-center mb-4'>
-              <TabsList className="bg-black/40 backdrop-blur-sm shadow-sm shadow-foreground/20">
-                <TabsTrigger value="before" className='border border-transparent data-[state=active]:border-foreground/20'>Vorher</TabsTrigger>
-                <TabsTrigger value="after" className='border border-transparent data-[state=active]:border-foreground/20'>Nachher</TabsTrigger>
+              <TabsList className="bg-black/40 backdrop-blur-sm shadow-sm shadow-foreground/20 p-1.5 h-16">
+                <TabsTrigger value="before" className='border border-transparent data-[state=active]:border-foreground/20 px-6 py-2.5 text-lg font-bold'>Vorher</TabsTrigger>
+                <TabsTrigger value="after" className='border border-transparent data-[state=active]:border-foreground/20 px-6 py-2.5 text-lg font-bold'>Nachher</TabsTrigger>
               </TabsList>
             </div>
-            <p className="font-bold text-white">{story}</p>
+            <div className="font-bold text-white">
+              <p className="text-lg mb-1">{name}, {age}</p>
+              <p className="italic text-foreground/70">"{quote}"</p>
+            </div>
           </div>
         </div>
       </Tabs>
@@ -68,17 +73,23 @@ export const TransformationSection = () => {
     {
       beforeImage: "/transformation/person-1-before.jpg",
       afterImage: "/transformation/person-1-after.jpg",
-      story: "Michael hat in 6 Monaten sein Ziel erreicht und 15kg Fett verloren, während er Muskelmasse aufgebaut hat."
+      name: "Matthias",
+      age: 35,
+      quote: "Ich hätte nie gedacht, dass Sport sich so gut anfühlen kann."
     },
     {
       beforeImage: "/transformation/person-2-before.jpg",
       afterImage: "/transformation/person-2-after.jpg",
-      story: "Sarah wollte sich fitter fühlen und hat in 4 Monaten ihre Ausdauer verbessert und ihren Körper gestrafft."
+      name: "Kay",
+      age: 39,
+      quote: "Nicht nur fitter – auch mental viel stärker geworden."
     },
     {
       beforeImage: "/transformation/person-3-before.jpg",
       afterImage: "/transformation/person-3-after.jpg",
-      story: "Thomas hat in 8 Monaten seine Körperzusammensetzung komplett verändert und signifikant Muskulatur aufgebaut."
+      name: "Kaan",
+      age: 28,
+      quote: "Du hast mir gezeigt, wie einfach dranzubleiben sein kann."
     }
   ]
 
@@ -106,11 +117,8 @@ export const TransformationSection = () => {
   }, [])
 
   return (
-    <section className="my-24">
-      <h2 className="text-3xl font-bold mb-8">Erfolgsgeschichten</h2>
-      <p className="text-lg mb-8">
-        Echte Ergebnisse meiner Kunden, die mit Engagement und der richtigen Anleitung ihre Ziele erreicht haben.
-      </p>
+    <section className="my-12">
+      <h2 className="text-2xl font-bold mb-4 tracking-widest uppercase">Erfolgsgeschichten</h2>
 
       <div className="max-w-lg mx-auto">
         <Swiper
