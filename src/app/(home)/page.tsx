@@ -9,17 +9,8 @@ export default function Page() {
       <Header />
       <main className="max-w-3xl mx-auto px-8 overflow-hidden">
         <TransformationSection />
-
-        <h2 className="text-3xl font-bold mb-8 pt-16">Willkommen bei Personal Training</h2>
-        <p className="text-lg mb-4">
-          Ich biete professionelles Personal Training an, das auf Ihre individuellen Bedürfnisse und Ziele zugeschnitten ist.
-        </p>
-        <p className="text-lg mb-12">
-          Mit meiner Erfahrung und Expertise helfe ich Ihnen dabei, Ihre Fitnessziele zu erreichen und dauerhaft fit und gesund zu bleiben.
-        </p>
         
         <AboutSection />
-        
         
         <ContactSection />
       </main>

@@ -5,14 +5,13 @@ import Image from "next/image"
 
 export const AboutSection = () => {
   return (
-    <section className="my-24">
-      <h2 className="text-3xl font-bold mb-8">Über Mich</h2>
+    <section className="my-12">
       
-      <div className="sm:flex sm:gap-12 sm:mb-12 md:items-center">
+      <div className="flex flex-col sm:flex-row sm:gap-12 sm:mb-12 items-center justify-center">
         {/* Image - Full width on mobile, left side on desktop */}
-        <div className="relative w-full md:w-1/2 aspect-square mb-6 md:mb-0 rounded-2xl overflow-hidden shadow-xl shadow-foreground/20 border-4">
+        <div className="relative w-1/2 aspect-square mb-6 md:mb-0 rounded-full overflow-hidden shadow-xl shadow-foreground/20 border-4">
           <Image 
-            src="/john.jpeg" 
+            src="/john.jpg" 
             alt="John Reinhardt" 
             fill 
             style={{ objectFit: 'cover' }}
