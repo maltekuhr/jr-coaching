@@ -16,7 +16,7 @@ export function ScrollingBanner() {
   return (
     <div className="relative w-full h-40 overflow-hidden lg:hidden">
       {/* First banner - Primary */}
-      <div className="absolute w-full bg-primary border-y border-foreground transform -rotate-6 scale-125 top-1/2 -translate-y-1/2">
+      <div className="absolute w-full bg-primary border-y border-background transform -rotate-6 scale-125 top-1/2 -translate-y-1/2">
         <div
           className="flex whitespace-nowrap py-2 animate-scroll-left"
           style={{ width: 'max-content' }}

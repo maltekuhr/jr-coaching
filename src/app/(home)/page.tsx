@@ -7,8 +7,10 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main className="max-w-3xl mx-auto px-8 pt-16">
-        <h2 className="text-3xl font-bold mb-8">Willkommen bei Personal Training</h2>
+      <main className="max-w-3xl mx-auto px-8 ">
+        <TransformationSection />
+
+        <h2 className="text-3xl font-bold mb-8 pt-16">Willkommen bei Personal Training</h2>
         <p className="text-lg mb-4">
           Ich biete professionelles Personal Training an, das auf Ihre individuellen Bedürfnisse und Ziele zugeschnitten ist.
         </p>
@@ -18,7 +20,6 @@ export default function Page() {
         
         <AboutSection />
         
-        <TransformationSection />
         
         <ContactSection />
       </main>

@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button"
 import { ScrollingBanner } from "@/components/ScrollingBanner"
+import { Navigation } from "@/components/Navigation"
 
 export function Header() {
   return (
     <div className="bg-background text-foreground">
+      <Navigation />
       <div className="relative">
         {/* Full-width background container */}
         <div className="absolute inset-0 flex justify-center">
@@ -56,10 +58,10 @@ export function Header() {
                 </p>
 
                 <div className="space-y-4 pt-4 grid">
-                  <Button className="w-full bg-primary text-primary-foreground rounded-xl text-lg py-5 font-bold hover:bg-primary/90 tracking-widest uppercase">
+                  <Button className="w-full bg-primary border-2 border-background text-primary-foreground rounded-xl text-lg py-5 font-bold hover:bg-primary/90 tracking-widest uppercase">
                     Jetzt anfragen
                   </Button>
-                  <Button className="text-lg py-5 font-bold bg-transparent rounded-xl border-foreground border-2 tracking-widest uppercase hover:bg-foreground/10 focus-visible:text-foreground">
+                  <Button className="text-lg py-5 text-foreground font-bold bg-transparent rounded-xl border-foreground border-2 tracking-widest uppercase hover:bg-foreground/10 focus-visible:text-foreground">
                     Mehr erfahren
                   </Button>
                 </div>
