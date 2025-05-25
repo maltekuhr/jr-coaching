@@ -1,6 +1,12 @@
 'use client'
 
 import { Star } from "lucide-react"
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination } from 'swiper/modules'
+import { useEffect } from 'react'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 const reviews = [
   {
@@ -24,10 +30,32 @@ const reviews = [
 ]
 
 export const GoogleReviewsSection = () => {
+  useEffect(() => {
+    // Add custom CSS for white Swiper theme
+    const style = document.createElement('style')
+    style.innerHTML = `
+      :root {
+        --swiper-theme-color: #ffffff;
+        --swiper-navigation-color: #ffffff;
+        --swiper-pagination-color: #ffffff;
+      }
+      .swiper-button-next, .swiper-button-prev {
+        color: white !important;
+      }
+      .swiper-pagination-bullet {
+        background: white !important;
+      }
+    `
+    document.head.appendChild(style)
+    
+    return () => {
+      document.head.removeChild(style)
+    }
+  }, [])
+
   return (
-    <section className="my-12">
+    <section className="py-12">
       
-      <div className="bg-foreground/10 rounded-lg p-6 shadow-lg border-2 border-foreground/15">
       <h2 className="text-xl font-bold  uppercase text-center">Kundenbewertungen</h2>
 
         <div className="flex items-center justify-center mb-6">
@@ -42,23 +70,41 @@ export const GoogleReviewsSection = () => {
           </div>
         </div>
         
-        <div className="grid gap-4 md:grid-cols-3">
+        <Swiper
+          spaceBetween={16}
+          slidesPerView={1}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Navigation, Pagination]}
+          className="mySwiper"
+        >
           {reviews.map((review, index) => (
-            <div key={index} className="bg-background rounded-lg p-4 border">
-              <div className="flex items-center justify-between mb-2">
-                <span className="font-semibold">{review.name}</span>
-                <div className="flex">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
+            <SwiperSlide key={index}>
+              <div className="bg-background rounded-lg p-4 border">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-semibold">{review.name}</span>
+                  <div className="flex">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
                 </div>
+                <p className="text-sm text-muted-foreground mb-2">"{review.text}"</p>
+                <span className="text-xs text-muted-foreground">{review.date}</span>
               </div>
-              <p className="text-sm text-muted-foreground mb-2">"{review.text}"</p>
-              <span className="text-xs text-muted-foreground">{review.date}</span>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
-      </div>
+        </Swiper>
     </section>
   )
 } 

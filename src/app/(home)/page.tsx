@@ -8,14 +8,22 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main className="max-w-3xl mx-auto px-8 overflow-hidden">
-        <TransformationSection />
+      <main className="overflow-hidden">
+        <div className="max-w-3xl mx-auto px-8">
+          <TransformationSection />
+        </div>
         
-        <AboutSection />
+        <div className="max-w-3xl mx-auto px-8">
+          <AboutSection />
+        </div>
         
-        <GoogleReviewsSection />
+        <div className="max-w-3xl mx-auto px-8 bg-foreground/10">
+          <GoogleReviewsSection />
+        </div>
         
-        <ContactSection />
+        <div className="max-w-3xl mx-auto px-8">
+          <ContactSection />
+        </div>
       </main>
     </>
   )
