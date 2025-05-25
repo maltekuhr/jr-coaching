@@ -35,16 +35,16 @@ export function Navigation() {
 
   return (
     <>
-      <nav className="hidden md:flex justify-center items-center p-4 bg-background/80 backdrop-blur-sm space-x-4 sticky top-0 z-50 border-b">
+      <nav className="hidden md:flex justify-center items-center p-4 space-x-4 bg-foreground z-50 border-b">
         
         {/* Desktop navigation - hidden on mobile */}
-          <Link href="/" className={`text-sm font-medium transition-colors hover:text-primary ${pathname === "/" ? "text-primary" : "text-foreground/70"}`}>
+          <Link href="/" className={`text-sm font-medium transition-colors hover:text-primary ${pathname === "/" ? "text-primary" : "text-background/70"}`}>
             Home
           </Link>
-          <Link href="/leistungen" className={`text-sm font-medium transition-colors hover:text-primary ${pathname === "/leistungen" ? "text-primary" : "text-foreground/70"}`}>
+          <Link href="/leistungen" className={`text-sm font-medium transition-colors hover:text-primary ${pathname === "/leistungen" ? "text-primary" : "text-background/70"}`}>
             Leistungen
           </Link>
-          <Link href="/rechner" className={`text-sm font-medium transition-colors hover:text-primary ${pathname === "/rechner" ? "text-primary" : "text-foreground/70"}`}>
+          <Link href="/rechner" className={`text-sm font-medium transition-colors hover:text-primary ${pathname === "/rechner" ? "text-primary" : "text-background/70"}`}>
             Kalorienrechner
           </Link>
       </nav>

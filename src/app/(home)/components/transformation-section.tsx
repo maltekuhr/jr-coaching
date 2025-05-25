@@ -48,9 +48,9 @@ const TransformationCard = ({ beforeImage, afterImage, name, age, quote }: Trans
           </TabsContent>
           
           {/* Text overlay with gradient at the bottom */}
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-black">
+          <div className="absolute bottom-0 left-0 right-0 p-4">
             <div className='flex justify-center mb-3'>
-              <TabsList className="bg-black/60 backdrop-blur-sm shadow-sm shadow-foreground/20 p-1.5 h-12">
+              <TabsList className="bg-foreground/70 backdrop-blur-sm shadow-sm shadow-foreground/20 p-1.5 h-12">
                 <TabsTrigger value="before" className='border border-transparent data-[state=active]:border-foreground/30 px-4 py-2 text-sm font-bold'>Vorher</TabsTrigger>
                 <TabsTrigger value="after" className='border border-transparent data-[state=active]:border-foreground/30 px-4 py-2 text-sm font-bold'>Nachher</TabsTrigger>
               </TabsList>
