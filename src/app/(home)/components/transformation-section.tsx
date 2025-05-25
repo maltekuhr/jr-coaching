@@ -48,7 +48,7 @@ const TransformationCard = ({ beforeImage, afterImage, name, age, quote }: Trans
           </TabsContent>
           
           {/* Text overlay with gradient at the bottom */}
-          <div className="absolute bottom-0 left-0 right-0 p-4">
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-">
             <div className='flex justify-center mb-3'>
               <TabsList className="bg-foreground/70 backdrop-blur-sm shadow-sm shadow-foreground/20 p-1.5 h-12">
                 <TabsTrigger value="before" className='border border-transparent data-[state=active]:border-foreground/30 px-4 py-2 text-sm font-bold'>Vorher</TabsTrigger>
@@ -57,7 +57,7 @@ const TransformationCard = ({ beforeImage, afterImage, name, age, quote }: Trans
             </div>
             <div className="font-bold text-white text-center">
               <p className="text-base mb-1">{name}, {age}</p>
-              <p className="italic text-gray-300 text-sm">"{quote}"</p>
+              <p className="italic text-gray-300 text-sm mb-3">"{quote}"</p>
             </div>
           </div>
         </div>
@@ -107,6 +107,9 @@ export const TransformationSection = () => {
       }
       .swiper-pagination-bullet {
         background: white !important;
+      }
+      .swiper-3d .swiper-slide-shadow {
+        background: rgba(255, 255, 255, 0.3) !important;
       }
     `
     document.head.appendChild(style)
