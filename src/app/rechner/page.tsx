@@ -169,7 +169,7 @@ function ResultsModal({
         
         <div className="flex justify-end px-4 mt-1">
             <Link href="/leistungen" className="w-full">
-              <Button variant="outline" className="w-full bg-foreground text-background tracking-widest uppercase font-bold">Jetzt durchstarten</Button>
+              <Button variant="outline" className="w-full bg-foreground text-background  uppercase font-bold">Jetzt durchstarten</Button>
             </Link>
         </div>
       </DialogContent>
@@ -354,7 +354,7 @@ export default function RechnerPage() {
           der dich Schritt für Schritt zu deinem Ziel führt.
         </p>
         <p className="text-xl font-bold mb-6">Lass uns den Weg zu DEINER BESTFORM gemeinsam gehen</p>
-        <Button size="lg" onClick={scrollToContact} className="bg-foreground text-background tracking-widest uppercase font-bold">
+        <Button size="lg" onClick={scrollToContact} className="bg-foreground text-background  uppercase font-bold">
           Jetzt starten
         </Button>
       </div>

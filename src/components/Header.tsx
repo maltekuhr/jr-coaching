@@ -57,10 +57,10 @@ export function Header() {
                 </p>
 
                 <div className="space-y-4 pt-4 grid">
-                  <Button className="w-full bg-primary border-2 border-background text-primary-foreground rounded-xl text-lg py-5 font-bold hover:bg-primary/90 tracking-widest uppercase">
+                  <Button className="w-full bg-primary border-2 border-background text-primary-foreground rounded-xl text-lg py-5 font-bold hover:bg-primary/90  uppercase">
                     Jetzt anfragen
                   </Button>
-                  <Button className="text-lg py-5 text-background font-bold bg-transparent rounded-xl border-background border-2 tracking-widest uppercase hover:bg-foreground/10 focus-visible:text-background">
+                  <Button className="text-lg py-5 text-background font-bold bg-transparent rounded-xl border-background border-2  uppercase hover:bg-foreground/10 focus-visible:text-background">
                     Mehr erfahren
                   </Button>
                 </div>

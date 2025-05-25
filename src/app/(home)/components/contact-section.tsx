@@ -101,7 +101,7 @@ export const ContactSection = () => {
             
               <Button 
                 type="submit"
-                className="w-full bg-primary text-primary-foreground rounded-xl text-lg py-5 font-bold hover:bg-primary/90 tracking-widest uppercase"
+                className="w-full bg-primary text-primary-foreground rounded-xl text-lg py-5 font-bold hover:bg-primary/90  uppercase"
                 disabled={!name.trim() || selectedGoals.length === 0}
             >
               Jetzt kontaktieren

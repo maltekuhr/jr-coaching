@@ -121,7 +121,7 @@ export const TransformationSection = () => {
 
   return (
     <section className="my-12">
-      <h2 className="text-2xl font-bold mb-4 tracking-widest uppercase text-center">Erfolgsgeschichten</h2>
+      <h2 className="text-2xl font-bold mb-4  uppercase text-center">Erfolgsgeschichten</h2>
 
       <div className="max-w-lg mx-auto">
         <Swiper
