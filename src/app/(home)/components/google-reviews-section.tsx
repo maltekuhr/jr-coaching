@@ -28,7 +28,7 @@ export const GoogleReviewsSection = () => {
     <section className="my-12">
       
       <div className="bg-foreground/10 rounded-lg p-6 shadow-lg border-2 border-foreground/15">
-      <h2 className="text-2xl font-bold tracking-widest uppercase text-center">Kundenbewertungen</h2>
+      <h2 className="text-xl font-bold tracking-widest uppercase text-center">Kundenbewertungen</h2>
 
         <div className="flex items-center justify-center mb-6">
           <div className="flex items-center gap-2">

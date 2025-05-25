@@ -23,7 +23,7 @@ const TransformationCard = ({ beforeImage, afterImage, name, age, quote }: Trans
       <Tabs defaultValue="before" className="w-full">
         <div className="relative">
           <TabsContent value="before" className="m-0">
-            <div className="relative w-full h-full max-h-[50vh] aspect-[1/1.8] overflow-hidden">
+            <div className="relative w-full h-[600px] max-h-[70vh] aspect-[1/1.8] overflow-hidden">
               <Image 
                 src={beforeImage}
                 alt={`Vor der Transformation`}
@@ -35,7 +35,7 @@ const TransformationCard = ({ beforeImage, afterImage, name, age, quote }: Trans
             </div>
           </TabsContent>
           <TabsContent value="after" className="m-0">
-            <div className="relative w-full h-full max-h-[50vh] aspect-[1/1.8] overflow-hidden">
+            <div className="relative w-full h-[600px] max-h-[70vh] aspect-[1/1.8] overflow-hidden">
               <Image 
                 src={afterImage}
                 alt={`Nach der Transformation`}
@@ -48,16 +48,16 @@ const TransformationCard = ({ beforeImage, afterImage, name, age, quote }: Trans
           </TabsContent>
           
           {/* Text overlay with gradient at the bottom */}
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-">
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-foreground pt-20 to-transparent">
             <div className='flex justify-center mb-3'>
               <TabsList className="bg-foreground/70 backdrop-blur-sm shadow-sm shadow-foreground/20 p-1.5 h-12">
                 <TabsTrigger value="before" className='border border-transparent data-[state=active]:border-foreground/30 px-4 py-2 text-sm font-bold'>Vorher</TabsTrigger>
                 <TabsTrigger value="after" className='border border-transparent data-[state=active]:border-foreground/30 px-4 py-2 text-sm font-bold'>Nachher</TabsTrigger>
               </TabsList>
             </div>
-            <div className="font-bold text-white text-center">
+            <div className="font-bold text-background text-center">
               <p className="text-base mb-1">{name}, {age}</p>
-              <p className="italic text-gray-300 text-sm mb-3">"{quote}"</p>
+              <p className="italic text-background/70 text-sm mb-3">"{quote}"</p>
             </div>
           </div>
         </div>
