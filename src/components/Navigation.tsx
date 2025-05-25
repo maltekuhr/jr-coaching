@@ -55,7 +55,7 @@ export function Navigation() {
           <Button 
             variant="outline" 
             size="icon" 
-            className="fixed top-4 p-2 h-12 w-12 right-4 z-50 md:hidden"
+            className="fixed top-4 p-2 h-12 w-12 right-4 z-50 md:hidden shadow-sm shadow-foreground/30"
             aria-label="Menu"
           >
             <div className="flex flex-col justify-center items-center gap-1">
