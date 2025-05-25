@@ -10,11 +10,11 @@ import { CheckIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const FITNESS_GOALS = [
-  "Gewichtabnehmen",
-  "Muskelaufbau",
-  "Allgemeine Fitness",
-  "Kraft",
-  "Ausdauer",
+  "Mehr Energie im Alltag",
+  "Muskelaufbau", 
+  "Fettreduktion",
+  "Ausdauer steigern",
+  "anderes Ziel",
 ]
 
 export const ContactSection = () => {
@@ -53,8 +53,9 @@ export const ContactSection = () => {
   }
 
   return (
-    <div>
-      <h3 className="text-2xl font-bold mb-6 text-center">Kontaktiere mich für <br/> dein persönliches Training</h3>
+    <div id="contact-section">
+      <h3 className="text-2xl font-bold mb-2 text-center">Wähle, was zu dir passt!</h3>
+      <p className="text-lg mb-6 text-center text-muted-foreground">Kontaktiere mich für dein persönliches Training</p>
       <Card className="max-w-md mx-auto bg-card border-border text-card-foreground shadow-lg relative">
         <CardContent className="p-8">
           <form onSubmit={handleSubmit} className="space-y-4">

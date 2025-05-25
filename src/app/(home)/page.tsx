@@ -2,6 +2,7 @@ import { Header } from "@/components/Header"
 import { AboutSection } from "./components/about-section"
 import { ContactSection } from "./components/contact-section"
 import { TransformationSection } from "./components/transformation-section"
+import { GoogleReviewsSection } from "./components/google-reviews-section"
 
 export default function Page() {
   return (
@@ -11,6 +12,8 @@ export default function Page() {
         <TransformationSection />
         
         <AboutSection />
+        
+        <GoogleReviewsSection />
         
         <ContactSection />
       </main>

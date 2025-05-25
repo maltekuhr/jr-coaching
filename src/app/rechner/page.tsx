@@ -14,6 +14,7 @@ import {
   DialogDescription,
   DialogClose,
 } from "@/components/ui/dialog";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -217,14 +218,25 @@ export default function RechnerPage() {
     setShowResults(true);
   };
 
+  const scrollToContact = () => {
+    window.location.href = '/#contact-section';
+  };
+
   return (
     <main className="max-w-3xl mx-auto px-8 py-12">
-      <h1 className="text-4xl font-bold mb-8">Kalorienbedarf Rechner</h1>
-      <p className="text-lg mb-8">
-        Berechnen Sie Ihren individuellen Kalorienbedarf, um Ihre Fitness- und Ernährungsziele besser planen zu können.
-      </p>
-      
-      <section className="border rounded-lg p-6 bg-background/50">
+      {/* Intro Copy */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold mb-6">Kalorienrechner – Deine erste Orientierung auf dem Weg zum Ziel</h1>
+        <p className="text-lg mb-6">
+          Du möchtest abnehmen, Muskeln aufbauen oder einfach fitter und gesünder leben? Dann ist dieser Kalorienrechner ein idealer erster Schritt.
+        </p>
+        <p className="text-lg mb-8">
+          Er zeigt dir, wie viele Kalorien dein Körper im Alltag ungefähr verbrennt – basierend auf deinen persönlichen Angaben.
+        </p>
+      </div>
+
+      {/* Calculator Section */}
+      <section className="border rounded-lg p-6 bg-background/50 mb-12">
         <h2 className="text-2xl font-bold mb-6">Kalorienbedarf Rechner</h2>
         <p className="mb-4 text-muted-foreground">Berechnung des täglichen Kalorienbedarfs nach der Harris-Benedict-Formel.</p>
         <div className="space-y-4">
@@ -302,6 +314,119 @@ export default function RechnerPage() {
           </Button>
         </div>
       </section>
+
+      {/* Why Numbers Are Just the Start */}
+      <div className="mb-12">
+        <h3 className="text-2xl font-bold mb-4">Warum diese Zahlen nur der Anfang sind</h3>
+        <p className="text-lg mb-4">
+          So genau der Rechner auch rechnet – jeder Körper reagiert individuell. Dein Energieverbrauch kann durch Stoffwechsel, 
+          hormonelle Prozesse, Muskelmasse oder Alltagsschwankungen stark abweichen.
+        </p>
+        <p className="text-lg mb-4">
+          Deshalb gilt: Ein Kalorienrechner liefert eine fundierte Ausgangsbasis – aber keine Garantie. Die wahren Erfolge 
+          entstehen in der konsequenten Umsetzung, der richtigen Anpassung und einer Strategie, die wirklich zu dir passt.
+        </p>
+      </div>
+
+      {/* Personal Coaching Benefits */}
+      <div className="mb-12">
+        <h3 className="text-2xl font-bold mb-4">Wieso persönliche Betreuung den Unterschied macht</h3>
+        <p className="text-lg mb-4">Als Coach helfe ich dir dabei:</p>
+        <ul className="list-disc list-inside space-y-2 text-lg mb-4 ml-4">
+          <li>die Zahlen aus dem Rechner richtig zu interpretieren</li>
+          <li>deinen Plan realistisch und nachhaltig umzusetzen</li>
+          <li>regelmäßig Anpassungen vorzunehmen, wenn dein Körper sich verändert</li>
+          <li>Rückschläge zu meistern und dranzubleiben</li>
+        </ul>
+        <p className="text-lg">
+          So erreichst du nicht nur dein Ziel – sondern hältst es auch langfristig.
+        </p>
+      </div>
+
+      {/* Call to Action */}
+      <div className="text-center mb-12">
+        <h3 className="text-2xl font-bold mb-4">Kalorienrechner + Coaching = dein Erfolgsrezept</h3>
+        <p className="text-lg mb-4">
+          Nutze den Kalorienrechner als deine Startlinie. Du bekommst damit ein erstes Gefühl für deinen Energiebedarf.
+        </p>
+        <p className="text-lg mb-6">
+          Für weitere Unterstützung bin ich als Coach an deiner Seite – mit Erfahrung, Know-how und einem klaren Plan, 
+          der dich Schritt für Schritt zu deinem Ziel führt.
+        </p>
+        <p className="text-xl font-bold mb-6">Lass uns den Weg zu DEINER BESTFORM gemeinsam gehen</p>
+        <Button size="lg" onClick={scrollToContact} className="bg-foreground text-background tracking-widest uppercase font-bold">
+          Jetzt starten
+        </Button>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="mb-12">
+        <h3 className="text-2xl font-bold mb-6 text-center">Häufige Fragen zum Kalorienrechner</h3>
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-1">
+            <AccordionTrigger className="text-left">
+              1. Warum sollte ich meinen Kalorienbedarf kennen?
+            </AccordionTrigger>
+            <AccordionContent>
+              <p className="text-base leading-relaxed">
+                Ohne zu wissen, wie viele Kalorien dein Körper tatsächlich verbraucht, ist es schwer, deine Fitnessziele zu erreichen. 
+                Ein Kalorienrechner hilft dir dabei die benötigten Kalorien zu ermitteln, um:
+              </p>
+              <ul className="list-disc list-inside mt-2 ml-4 space-y-1">
+                <li>Zuverlässig abzunehmen</li>
+                <li>Gezielt Muskeln aufzubauen</li>
+                <li>Dein Gewicht zu halten</li>
+              </ul>
+              <p className="mt-2">Kurz gesagt: Wer seinen Körper versteht, kann ihn auch gezielt formen.</p>
+            </AccordionContent>
+          </AccordionItem>
+          
+          <AccordionItem value="item-2">
+            <AccordionTrigger className="text-left">
+              2. Ich habe schon öfter Kalorien berechnet – warum klappt's trotzdem nicht?
+            </AccordionTrigger>
+            <AccordionContent>
+              <p className="text-base leading-relaxed">
+                Weil Kalorienberechnen nur ein Teil vom Ganzen ist. Ein Kalorienrechner ist ein hilfreiches Werkzeug – aber kein Alleskönner. 
+                Er ersetzt keine persönliche Anpassung, kein Feedback aus der Praxis und vor allem keinen individuellen Plan, 
+                der zu deinem Alltag und deinen Bedürfnissen passt.
+              </p>
+              <p className="mt-2">
+                In der Umsetzung liegt oft die Herausforderung: Portionsgrößen, versteckte Kalorien, wenig Bewegung oder Stress 
+                machen den Unterschied. Genau da setzt Coaching an – mit alltagstauglichen Lösungen, die zu dir passen.
+              </p>
+            </AccordionContent>
+          </AccordionItem>
+          
+          <AccordionItem value="item-3">
+            <AccordionTrigger className="text-left">
+              3. Wie oft sollte ich meinen Kalorienbedarf neu berechnen?
+            </AccordionTrigger>
+            <AccordionContent>
+              <p className="text-base leading-relaxed">
+                Du solltest deinen Kalorienbedarf neu berechnen, wenn sich etwas Wesentliches verändert – z. B. dein Gewicht, 
+                deine Trainingsroutine oder dein Alltag.
+              </p>
+              <p className="mt-2 font-semibold">
+                Ändert sich dein Ziel, ändert sich auch dein Kalorienbedarf!
+              </p>
+            </AccordionContent>
+          </AccordionItem>
+          
+          <AccordionItem value="item-4">
+            <AccordionTrigger className="text-left">
+              4. Warum unterscheiden sich die Ergebnisse bei verschiedenen Rechnern?
+            </AccordionTrigger>
+            <AccordionContent>
+              <p className="text-base leading-relaxed">
+                Es gibt mehrere Formeln zur Berechnung des Kalorienbedarfs – wie Harris-Benedict, Mifflin-St. Jeor oder Katch-McArdle. 
+                Je nach gewählter Formel und Berechnungsweise kann das Ergebnis leicht variieren. Wichtig ist, mit einer Methode 
+                konsistent zu arbeiten und sie als Orientierung zu nutzen – nicht als absolute Wahrheit.
+              </p>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </div>
       
       <ResultsModal 
         open={showResults} 

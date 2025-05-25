@@ -19,45 +19,45 @@ interface TransformationData {
 
 const TransformationCard = ({ beforeImage, afterImage, name, age, quote }: TransformationData) => {
   return (
-    <div className="bg-card rounded-xl overflow-hidden shadow-lg shadow-foreground/20 border-2 border-foreground">
+    <div className="bg-card rounded-xl overflow-hidden shadow-lg shadow-foreground/20 border-2 border-foreground max-w-xs mx-auto">
       <Tabs defaultValue="before" className="w-full">
         <div className="relative">
           <TabsContent value="before" className="m-0">
-            <div className="relative w-full h-full max-h-[70vh] aspect-[1/2] overflow-hidden">
+            <div className="relative w-full h-full max-h-[50vh] aspect-[1/1.8] overflow-hidden">
               <Image 
                 src={beforeImage}
                 alt={`Vor der Transformation`}
                 fill
-                style={{ objectFit: 'cover', objectPosition: 'center' }}
-                sizes="(max-width: 768px) 100vw, 800px"
+                style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                sizes="(max-width: 768px) 100vw, 400px"
                 priority
               />
             </div>
           </TabsContent>
           <TabsContent value="after" className="m-0">
-            <div className="relative w-full h-full max-h-[70vh] aspect-[1/2] overflow-hidden">
+            <div className="relative w-full h-full max-h-[50vh] aspect-[1/1.8] overflow-hidden">
               <Image 
                 src={afterImage}
                 alt={`Nach der Transformation`}
                 fill
-                style={{ objectFit: 'cover', objectPosition: 'center' }}
-                sizes="(max-width: 768px) 100vw, 800px"
+                style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                sizes="(max-width: 768px) 100vw, 400px"
                 priority
               />
             </div>
           </TabsContent>
           
           {/* Text overlay with gradient at the bottom */}
-          <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/60 to-transparent">
-            <div className='flex justify-center mb-4'>
-              <TabsList className="bg-black/40 backdrop-blur-sm shadow-sm shadow-foreground/20 p-1.5 h-16">
-                <TabsTrigger value="before" className='border border-transparent data-[state=active]:border-foreground/20 px-6 py-2.5 text-lg font-bold'>Vorher</TabsTrigger>
-                <TabsTrigger value="after" className='border border-transparent data-[state=active]:border-foreground/20 px-6 py-2.5 text-lg font-bold'>Nachher</TabsTrigger>
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-black">
+            <div className='flex justify-center mb-3'>
+              <TabsList className="bg-black/60 backdrop-blur-sm shadow-sm shadow-foreground/20 p-1.5 h-12">
+                <TabsTrigger value="before" className='border border-transparent data-[state=active]:border-foreground/30 px-4 py-2 text-sm font-bold'>Vorher</TabsTrigger>
+                <TabsTrigger value="after" className='border border-transparent data-[state=active]:border-foreground/30 px-4 py-2 text-sm font-bold'>Nachher</TabsTrigger>
               </TabsList>
             </div>
-            <div className="font-bold text-white">
-              <p className="text-lg mb-1">{name}, {age}</p>
-              <p className="italic text-foreground/70">"{quote}"</p>
+            <div className="font-bold text-white text-center">
+              <p className="text-base mb-1">{name}, {age}</p>
+              <p className="italic text-gray-300 text-sm">"{quote}"</p>
             </div>
           </div>
         </div>

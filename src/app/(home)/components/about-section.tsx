@@ -6,6 +6,7 @@ import Image from "next/image"
 export const AboutSection = () => {
   return (
     <section className="my-12">
+      <h2 className="text-2xl font-bold mb-8 tracking-widest uppercase text-center">Dein Coach</h2>
       
       <div className="flex flex-col sm:flex-row sm:gap-12 sm:mb-12 items-center justify-center">
         {/* Image - Full width on mobile, left side on desktop */}
@@ -15,7 +16,7 @@ export const AboutSection = () => {
             alt="John Reinhardt" 
             fill 
             style={{ objectFit: 'cover' }}
-            className="rounded-lg w-full h-full"
+            className="rounded-full w-full h-full"
           />
         </div>
         

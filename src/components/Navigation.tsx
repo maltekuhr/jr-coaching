@@ -45,7 +45,7 @@ export function Navigation() {
             Leistungen
           </Link>
           <Link href="/rechner" className={`text-sm font-medium transition-colors hover:text-primary ${pathname === "/rechner" ? "text-primary" : "text-foreground/70"}`}>
-            Rechner
+            Kalorienrechner
           </Link>
       </nav>
 
@@ -93,7 +93,7 @@ export function Navigation() {
                 href="/rechner" 
                 className={`block text-3xl font-bold transition-colors hover:text-primary ${pathname === "/rechner" ? "text-primary" : "text-foreground"}`}
               >
-                Rechner
+                Kalorienrechner
               </Link>
             </DialogClose>
           </div>
